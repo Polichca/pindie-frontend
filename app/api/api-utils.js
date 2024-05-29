@@ -57,8 +57,8 @@ export const authorize = async (url, data) => {
     if (response.status !== 200) {
       throw new Error("Ошибка авторизации");
     }
-    const result = await response.json();
-    return result;
+
+    return await response.json();
   } catch (error) {
     return error;
   }
