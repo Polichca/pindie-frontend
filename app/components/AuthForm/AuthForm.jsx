@@ -16,7 +16,6 @@ export const AuthForm = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const userData = await authorize(endpoints.auth, authData);
-    console.log(userData);
     if (isResponseOk(userData)) {
       authContext.login(userData, userData.jwt);
       setMessage({ status: "success", text: "Вы авторизовались!" });
